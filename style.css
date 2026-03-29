@@ -11,10 +11,12 @@ body {
   margin: auto;
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-h1 { text-align: center; }
+h1 {
+  text-align: center;
+}
 
 textarea {
   max-width: 575px;
@@ -32,6 +34,12 @@ textarea {
   justify-content: space-between;
 }
 
+.buttons-extra {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-around;
+}
+
 button {
   background-color: #2563eb;
   color: white;
@@ -41,10 +49,13 @@ button {
   cursor: pointer;
 }
 
-button:hover { background-color: #1e40af; }
+button:hover {
+  background-color: #1e40af;
+}
 
-#downloadBtn{
-    margin-top: 2em;
+#downloadBtn,
+#clearBtn {
+  margin-top: 2em;
 }
 
 #status {
@@ -70,4 +81,3 @@ button:hover { background-color: #1e40af; }
   background-color: #2563eb; /* blue */
   transition: width 0.4s ease;
 }
-
