@@ -20,6 +20,18 @@
     </main>
 
     <script>
+      // Questions editable when user goes back
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const savedQuestions =
+          JSON.parse(localStorage.getItem("journalQuestions")) || []
+
+        if (savedQuestions.length) {
+          document.getElementById("q1").value = savedQuestions[0].question || ""
+          document.getElementById("q2").value = savedQuestions[1].question || ""
+          document.getElementById("q3").value = savedQuestions[2].question || ""
+        }
+      })
       document.getElementById("startBtn").addEventListener("click", () => {
         const questions = [
           { question: document.getElementById("q1").value.trim() },

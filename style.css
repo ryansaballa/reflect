@@ -54,7 +54,8 @@ button:hover {
 }
 
 #downloadBtn,
-#clearBtn {
+#clearBtn,
+#backBtn {
   margin-top: 2em;
 }
 

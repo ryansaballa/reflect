@@ -25,6 +25,8 @@ const promptBody = document.getElementById("prompt-body")
 const entryBox = document.getElementById("entry")
 const prevBtn = document.getElementById("prevBtn")
 const nextBtn = document.getElementById("nextBtn")
+const clearBtn = document.getElementById("clearBtn")
+const backBtn = document.getElementById("backBtn")
 const downloadBtn = document.getElementById("downloadBtn")
 const status = document.getElementById("status")
 const progressBar = document.getElementById("progress-bar")
@@ -117,4 +119,9 @@ function clearAllEntries() {
 // Clear all entries
 clearBtn.addEventListener("click", () => {
   clearAllEntries()
+})
+
+// Go back to rewrite questions
+backBtn.addEventListener("click", () => {
+  window.location.href = "index.html"
 })
