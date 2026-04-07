@@ -81,3 +81,40 @@ button:hover {
   background-color: #2563eb; /* blue */
   transition: width 0.4s ease;
 }
+
+/* Landing Page - Questions */
+
+ol {
+  padding-left: 1.2rem;
+}
+
+li {
+  margin-bottom: 1rem;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.start-btn {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.subtitle {
+  text-align: center;
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}

@@ -3,46 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Locked In Journal</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Your Reflection Journal</title>
   </head>
   <body>
     <main class="container">
-      <h1>Time to Lock In</h1>
+      <h1>Focus on Three Questions</h1>
+      <p>Create open-ended questions that align with your goals:</p>
 
-      <!-- Progress Bar -->
-      <div id="progress-container">
-        <div id="progress-bar"></div>
-      </div>
+      <ol>
+        <li><input type="text" id="q1" placeholder="Question 1" /></li>
+        <li><input type="text" id="q2" placeholder="Question 2" /></li>
+        <li><input type="text" id="q3" placeholder="Question 3" /></li>
+      </ol>
 
-      <!-- Prompt Bar -->
-
-      <div id="prompt-box">
-        <h2 id="prompt-title"></h2>
-        <p id="prompt-body"></p>
-      </div>
-
-      <textarea
-        id="entry"
-        placeholder="Write your reflection here..."
-      ></textarea>
-
-      <div class="buttons">
-        <button id="prevBtn">← Previous</button>
-        <button id="nextBtn">Next →</button>
-      </div>
-      <div class="buttons-extra">
-        <div id="downloadBtn">
-          <button>Download All</button>
-        </div>
-        <div id="clearBtn">
-          <button>Clear All</button>
-        </div>
-      </div>
-
-      <p id="status"></p>
+      <button id="startBtn">Start Journaling</button>
     </main>
 
-    <script src="script.js"></script>
+    <script>
+      document.getElementById("startBtn").addEventListener("click", () => {
+        const questions = [
+          { question: document.getElementById("q1").value.trim() },
+          { question: document.getElementById("q2").value.trim() },
+          { question: document.getElementById("q3").value.trim() },
+        ]
+
+        // Basic validation
+        if (questions.some((q) => q.question === "")) {
+          alert("Please fill in all 3 questions.")
+          return
+        }
+
+        // Save to localStorage
+        localStorage.setItem("journalQuestions", JSON.stringify(questions))
+
+        // Redirect to main journal page
+        window.location.href = "prompts.html"
+      })
+    </script>
   </body>
 </html>

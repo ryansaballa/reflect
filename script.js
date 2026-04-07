@@ -1,19 +1,21 @@
 // script.js
 
-const prompts = [
-  {
-    title: "Reflect on today's learning",
-    body: "What did you learn today? What surprised you the most?",
-  },
-  {
-    title: "Challenges faced",
-    body: "What difficulties did you encounter and how did you respond?",
-  },
-  {
-    title: "Action plan",
-    body: "What will you do next to build on what you learned?",
-  },
-]
+const savedQuestions = JSON.parse(localStorage.getItem("journalQuestions"))
+
+// if no questions exists, redirect
+
+if (!savedQuestions || savedQuestions.length === 0) {
+  window.location.href = "prompt.html"
+}
+
+// converting user questions into prompts structure
+
+const prompts = savedQuestions.map((q, index) => ({
+  title: q.question,
+  body: "Write your reflection below:",
+}))
+
+let currentIndex = 0
 
 const STORAGE_KEY = "learning-journal-entries"
 let entries = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}
@@ -26,8 +28,6 @@ const nextBtn = document.getElementById("nextBtn")
 const downloadBtn = document.getElementById("downloadBtn")
 const status = document.getElementById("status")
 const progressBar = document.getElementById("progress-bar")
-
-let currentIndex = 0
 
 // Load the first prompt
 renderPrompt()
@@ -108,7 +108,7 @@ function clearAllEntries() {
   const confirmed = confirm("All entries will be cleared. Continue?")
   if (!confirmed) return
   entryBox.value = ""
-  entries = []
+  entries = {}
   localStorage.removeItem(STORAGE_KEY)
   currentIndex = 0
   renderPrompt()
