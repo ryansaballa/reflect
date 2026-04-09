@@ -6,6 +6,9 @@ body {
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
   background: white;
   max-width: 600px;
   margin: auto;
@@ -85,12 +88,24 @@ button:hover {
 
 /* Landing Page - Questions */
 
+.tag {
+  margin: 0 auto;
+}
+
 ol {
-  padding-left: 1.2rem;
+  padding-left: 0px;
+  margin-left: 0px;
+  list-style-position: inside;
 }
 
 li {
   margin-bottom: 1rem;
+}
+
+ol li::marker {
+  content: "Question " counter(list-item);
+  font-size: 0.75rem;
+  color: #1e40af;
 }
 
 input {
@@ -100,6 +115,7 @@ input {
   border: 1px solid #d1d5db;
   font-size: 1rem;
   margin-top: 5px;
+  box-sizing: border-box;
 }
 
 input:focus {
