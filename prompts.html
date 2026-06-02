@@ -1,51 +1,42 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Locked In Journal</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <main class="container">
-      <h1>Time to Lock In</h1>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Locked In Journal</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <main class="container">
+            <h1>Time to Lock In</h1>
 
-      <!-- Progress Bar -->
-      <div id="progress-container">
-        <div id="progress-bar"></div>
-      </div>
+            <!-- Progress Bar -->
+            <div id="progress-container">
+                <div id="progress-bar"></div>
+            </div>
 
-      <!-- Prompt Bar -->
+            <!-- Prompt Bar -->
 
-      <div id="prompt-box">
-        <h2 id="prompt-title"></h2>
-        <p id="prompt-body"></p>
-      </div>
+            <div id="prompt-box">
+                <h2 id="prompt-title"></h2>
+                <p id="prompt-body"></p>
+            </div>
 
-      <textarea
-        id="entry"
-        placeholder="Write your reflection here..."
-      ></textarea>
+            <textarea id="entry" placeholder="Write your reflection here..."></textarea>
 
-      <div class="buttons">
-        <button id="prevBtn">← Previous</button>
-        <button id="nextBtn">Next →</button>
-      </div>
-      <div class="buttons-extra">
-        <div id="downloadBtn">
-          <button>Download All</button>
-        </div>
-        <div id="clearBtn">
-          <button>Clear All</button>
-        </div>
-        <div id="backBtn">
-          <button>Rewrite Questions</button>
-        </div>
-      </div>
+            <div class="buttons">
+                <button id="prevBtn">← Previous</button>
+                <button id="nextBtn">Next →</button>
+            </div>
 
-      <p id="status"></p>
-    </main>
+            <button id="viewAllBtn">View All Responses</button>
+            <button id="downloadBtn">Download Responses</button>
+            <button id="clearBtn">Clear All</button>
+            <button id="backBtn">Review Questions</button>
 
-    <script src="script.js"></script>
-  </body>
+            <p id="status"></p>
+        </main>
+
+        <script src="script.js"></script>
+    </body>
 </html>
